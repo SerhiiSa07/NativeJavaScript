@@ -24,7 +24,7 @@ test('change address.', () => {
         hair: 32,
         address: {
             city: 'Kiev',
-            house: 12
+            house: '12'
         },
         laptop: {
             title: 'Lenovo Legion W520'
