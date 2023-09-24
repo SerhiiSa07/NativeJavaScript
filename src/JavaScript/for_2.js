@@ -1,4 +1,4 @@
-//исходные данные
+/*//исходные данные
 const repeatCount = 3;
 
 for (let index = 1; index >= repeatCount; index++) {
@@ -48,17 +48,18 @@ let shoppingLists = [
     ['молоко', 'хлеб', 'яйца'],
     ['сок', 'мороженое'],
     ['корм для котта', 'шампунь']
-];
+];*/
 
 // extract subarrays form main array
-for (let i = 0; i < shoppingLists.length; i++) {
-    let subarray = shoppingLists[i];
 
+/*for (let i = 0; i < shoppingLists.length; i++) {
+    let subarray = shoppingLists[i];
+    document.write('-------------', '<br>');
     for (let j = 0; j < subarray.length; j++) {
         let product = subarray[j];
         document.write(product, '<br>');
     }
-}
+}*/
 /*let list = shoppingLists[0];
 let product0 = list[0];
 let product1 = list[1];
@@ -73,3 +74,53 @@ list = shoppingLists[2];
  product1 = list[1];
 
 console.log(product)*/
+
+
+
+
+const words = [
+    {
+        original: 'Wassup',
+        transaction: 'Здарова'
+    },
+    {
+        original: 'Bye',
+        transaction: 'Пока'
+    }
+];
+
+const notificationMessages = {
+    result: {
+        finishSuccess: 'Молодец. Good Morning',
+        finishUnsuccess: 'Молодец. Но постарайся лучше'
+    },
+    start: {
+        hello: 'Hello man. You can learn English. Good Luck'
+    }
+}
+
+const settings = {
+    correctAnswersMinPercent: 50
+}
+
+const result = {
+    correctAnswerCount: 0
+}
+
+// --------------------
+
+for (let i = 0; i < words.length; i++){
+    let userAnswer = prompt(words[i].original); //0
+    alert(userAnswer === words[i].transaction);
+    if(userAnswer === words[i].transaction) {
+        result.correctAnswerCount = result.correctAnswerCount +1;
+    }
+}
+
+const userCorrectAnswersParcent = result.correctAnswerCount / words.length * 100;
+
+if (userCorrectAnswersParcent > settings.correctAnswersMinPercent) {
+    alert(notificationMessages.result.finishSuccess);
+}else {
+    alert(notificationMessages.result.finishUnsuccess)
+}
